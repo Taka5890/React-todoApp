@@ -1,11 +1,14 @@
 import React from "react";
 
-const ColorfulMessage = (props) => {
+export const ColorfulMessage = (props) => {
+  const { color, children } = props;
   const contentStyle = {
-    color: props.color,
+    //オブジェクトの変数とプロパティ名が同じだと省略可能
+    //color: color,
+    color,
     fontSize: "18px"
   };
-  return <p style={contentStyle}>{props.message}</p>;
+  //return <p style={contentStyle}>{props.message}</p>;
+  //childrenタグ内の要素を表示する
+  return <p style={contentStyle}>{children}</p>;
 };
-
-export default ColorfulMessage;
